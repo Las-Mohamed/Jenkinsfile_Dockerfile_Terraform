@@ -49,7 +49,7 @@ pipeline {
                 }    
             }
         } 
-        stage ('Terraform ${params.Action} Staging') {
+        stage ('Terraform apply/destroy Staging') {
           steps {
                script {
                     sh "cd StagingEnvironment && terraform ${params.Action} -auto-approve"
@@ -68,7 +68,7 @@ pipeline {
                 }    
             }
         } 
-        stage ('Terraform ${params.Action} Prod') {
+        stage ('Terraform apply/destroy Prod') {
           steps {
                script {
                     sh "cd ProdEnvironment && terraform ${params.Action} -auto-approve"
