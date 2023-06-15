@@ -53,7 +53,7 @@ pipeline {
         stage ('Terraform apply') {
           steps {
                script {
-                    sh "cd ${params.Environment} && terraform ${params.Action} -approve-auto"               }
+                    sh "cd ${params.Environment} && terraform ${params.Action} -auto-approve"               }
           }
         }
     }    
