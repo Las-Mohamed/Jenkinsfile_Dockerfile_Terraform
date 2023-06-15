@@ -63,7 +63,7 @@ pipeline {
             }
         }
 
-        stage ('AZ Login") {
+        stage ('AZ Login') {
                steps {
                     script {
                          sh 'az login --service-principal -u $MY_CRED_CLIENT_ID -p $MY_CRED_CLIENT_SECRET -t $MY_CRED_TENANT_ID'
