@@ -33,8 +33,6 @@ pipeline {
     {
          choice choices: ['StagingEnvironment', 'ProdEnvironment'], name: 'Environment'
          choice choices: ['apply', 'destroy'], name: 'Action'
-}
-}
     }
     
     stages {
