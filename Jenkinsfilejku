@@ -48,7 +48,7 @@ pipeline {
         stage ('Terraform apply') {
           steps {
                script {
-                    sh "cd StagingEnvironment && terraform apply"               }
+                    sh "cd StagingEnvironment && terraform apply"
                }
            }
       }
@@ -67,7 +67,7 @@ pipeline {
         stage ('Terraform apply') {
           steps {
                script {
-                    sh "cd ProdEnvironment && terraform apply"               }
+                    sh "cd ProdEnvironment && terraform apply"
                }
            }
       }
