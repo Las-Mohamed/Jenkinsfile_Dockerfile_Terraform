@@ -41,14 +41,14 @@ pipeline {
         stage ('Terraform init Staging') {
             steps {
                 script {
-                    sh "cd StagingEnvironment && terraform init -auto-approve"
+                    sh "cd StagingEnvironment && terraform init -upgrade"
                 }    
             }
         } 
         stage ('Terraform apply Staging') {
           steps {
                script {
-                    sh "cd StagingEnvironment && terraform apply"
+                    sh "cd StagingEnvironment && terraform apply -auto-approve"
                }
            }
       }
@@ -60,14 +60,14 @@ pipeline {
         stage ('Terraform init Prod') {
             steps {
                 script {
-                    sh "cd ProdEnvironment && terraform init -auto-approve"
+                    sh "cd ProdEnvironment && terraform init -upgrade"
                 }    
             }
         } 
         stage ('Terraform apply Prod') {
           steps {
                script {
-                    sh "cd ProdEnvironment && terraform apply"
+                    sh "cd ProdEnvironment && terraform apply -auto-approve"
                }
            }
       }
