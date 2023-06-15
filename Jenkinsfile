@@ -46,14 +46,14 @@ pipeline {
         stage ('Terraform init') {
             steps {
                 script {
-                    sh "cd ${params.Environment} && terraform ${params.Action} -auto-approve"
+                    sh "cd ${params.Environment} && terraform init -upgrade"
                 }    
             }
         } 
         stage ('Terraform apply') {
           steps {
                script {
-                    sh "cd ${params.Environment} && terraform ${params.Action}"               }
+                    sh "cd ${params.Environment} && terraform ${params.Action} -approve-auto"               }
           }
         }
     }    
