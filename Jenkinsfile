@@ -1,12 +1,12 @@
 node{
-     parameters
+  /*   parameters
     {
         /*booleanParam(defaultValue: true, description: '', name: 'Deploy')*/
         /*string(name: 'Environment', defaultValue: "", description: '')
         string(name: 'Action', defaultValue: "", description: '')*/
-        choice(choices: ['StagingEnvironment', 'ProdEnvironment'], name: 'Environment')
+     /*   choice(choices: ['StagingEnvironment', 'ProdEnvironment'], name: 'Environment')
         choice(choices: ['apply', 'destroy'], name: 'Action')
-    }
+    }*/
     
     stage('Clone') {
         checkout scm
