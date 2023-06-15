@@ -1,9 +1,10 @@
 node{
      parameters
     {
-        booleanParam(defaultValue: true, description: '', name: 'Deploy')
+        /*booleanParam(defaultValue: true, description: '', name: 'Deploy')*/
         string(name: 'Environment', defaultValue: "", description: '')
-        choice(choices: ['apply', 'destroy'], name: 'Action')
+        string(name: 'Action', defaultValue: "", description: '')
+        /*choice(choices: ['apply', 'destroy'], name: 'Action')*/
     }
     
     stage('Clone') {
