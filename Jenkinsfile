@@ -49,7 +49,7 @@ pipeline {
                 }    
             }
         } 
-        stage ('Terraform apply Staging') {
+        stage ('Terraform ${params.Action} Staging') {
           steps {
                script {
                     sh "cd StagingEnvironment && terraform ${params.Action} -auto-approve"
@@ -58,7 +58,7 @@ pipeline {
       }
         stage('Sanity check') {
              steps {
-                 input "Does the staging environment look ok?"
+                 input "Does the staging environment is ${params.Action}ed?"
             }
         }
         stage ('Terraform init Prod') {
@@ -68,7 +68,7 @@ pipeline {
                 }    
             }
         } 
-        stage ('Terraform apply Prod') {
+        stage ('Terraform ${params.Action} Prod') {
           steps {
                script {
                     sh "cd ProdEnvironment && terraform ${params.Action} -auto-approve"
