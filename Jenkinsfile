@@ -46,7 +46,9 @@ pipeline {
         
         stage ('Build Image') {
             steps {
-                docker.build("mowqa/pytoon")
+                 script {
+                      docker.build("mowqa/pytoon")
+                 }
                 }                
             }
     
