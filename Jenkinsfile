@@ -16,4 +16,5 @@ node{
     }
     stage ('Terraform apply') {
         sh 'cd StagingEnvironment && terraform apply -auto-approve'
+    }
 }
