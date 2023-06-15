@@ -1,21 +1,13 @@
-pipeline {
-    agent any
-    stages {
-     stage('Clone') {
-         steps{
-            checkout scm
-         }
-     }
-    stage('Build Image') {
-        steps{
-            docker.build("mowqa/pytoon")
-        }
+node{
+    
+    stage('Clone') {
+        checkout scm
     }
-    stage('Push Image') {
-        steps{
-            sh 'docker login -u mowqa -p dckr_pat_is0y3bHt8AoE6BLlA7sv3NaKJMI'
-            sh 'docker push mowqa/pytoon'
-        }
-      }
-   }
-}
+    
+    stage ('Build Image') {
+        docker.build("mowqa/pytoon")
+    }
+    stage ('Push Image') {
+        sh 'docker login -u mowqa -p dckr_pat_is0y3bHt8AoE6BLlA7sv3NaKJMI'
+        sh 'docker push mowqa/pytoon'
+    }
