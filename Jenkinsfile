@@ -57,8 +57,8 @@ pipeline {
         stage ('Push Image') {
             steps {
                 script {
-                    sh 'docker login -u mowqa -p dckr_pat_is0y3bHt8AoE6BLlA7sv3NaKJMI'
-                    sh 'docker push mowqa/pytoon'
+                    sh "docker login -u mowqa -p dckr_pat_is0y3bHt8AoE6BLlA7sv3NaKJMI"
+                    sh "docker push mowqa/pytoon"
                 }
             }
         }
@@ -66,7 +66,7 @@ pipeline {
         stage ('AZ Login') {
                steps {
                     script {
-                         sh 'az login --service-principal -u $MY_CRED_CLIENT_ID -p $MY_CRED_CLIENT_SECRET -t $MY_CRED_TENANT_ID'
+                         sh "az login --service-principal -u $MY_CRED_CLIENT_ID -p $MY_CRED_CLIENT_SECRET -t $MY_CRED_TENANT_ID"
                     }
                }
           }
@@ -81,7 +81,7 @@ pipeline {
         stage ('Terraform apply') {
           steps {
                script {
-                    sh 'cd ${params.Environment} && terraform ${params.Action}'
+                    sh "cd ${params.Environment} && terraform ${params.Action}"
                     /* -var=subscription_id=$AZURE_SUBSCRIPTION_ID -var=client_id=$AZURE_CLIENT_ID -var=client_secret=$AZURE_CLIENT_SECRET -var=tenant_id=$AZURE_TENANT_ID -auto-approve'*/
                }
           }
