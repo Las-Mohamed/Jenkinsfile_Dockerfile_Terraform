@@ -1,5 +1,9 @@
 pipeline {
     agent any
+      parameters
+    {
+         choice choices: ['apply', 'destroy'], name: 'Action'
+    }
     
     environment {
         MY_CRED = credentials('f2d10700-72b4-4064-b1d8-1a4882c4f29f')
