@@ -31,9 +31,10 @@ pipeline {
   
     parameters
     {
-        booleanParam(defaultValue: true, description: '', name: 'Deploy')
-        string(name: 'Environment', defaultValue: "", description: '')
-        choice(choices: ['apply', 'destroy'], name: 'Action')
+         choice choices: ['StagingEnvironment', 'ProdEnvironment'], name: 'Environment'
+         choice choices: ['apply', 'destroy'], name: 'Deploy'
+}
+}
     }
     
     stages {
