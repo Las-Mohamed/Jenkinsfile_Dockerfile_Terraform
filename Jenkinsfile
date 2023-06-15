@@ -32,7 +32,7 @@ pipeline {
     parameters
     {
          choice choices: ['StagingEnvironment', 'ProdEnvironment'], name: 'Environment'
-         choice choices: ['apply', 'destroy'], name: 'Deploy'
+         choice choices: ['apply', 'destroy'], name: 'Action'
 }
 }
     }
