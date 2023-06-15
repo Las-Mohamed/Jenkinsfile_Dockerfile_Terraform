@@ -38,14 +38,14 @@ pipeline {
                }
           }
 
-        stage ('Terraform init') {
+        stage ('Terraform init Staging') {
             steps {
                 script {
                     sh "cd StagingEnvironment && terraform init -auto-approve"
                 }    
             }
         } 
-        stage ('Terraform apply') {
+        stage ('Terraform apply Staging') {
           steps {
                script {
                     sh "cd StagingEnvironment && terraform apply"
@@ -57,14 +57,14 @@ pipeline {
                  input "Does the staging environment look ok?"
             }
         }
-        stage ('Terraform init') {
+        stage ('Terraform init Prod') {
             steps {
                 script {
                     sh "cd ProdEnvironment && terraform init -auto-approve"
                 }    
             }
         } 
-        stage ('Terraform apply') {
+        stage ('Terraform apply Prod') {
           steps {
                script {
                     sh "cd ProdEnvironment && terraform apply"
