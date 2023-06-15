@@ -81,7 +81,8 @@ pipeline {
         stage ('Terraform apply') {
           steps {
                script {
-                    sh 'cd ${params.Environment} && terraform ${params.Action} -var=subscription_id=$AZURE_SUBSCRIPTION_ID -var=client_id=$AZURE_CLIENT_ID -var=client_secret=$AZURE_CLIENT_SECRET -var=tenant_id=$AZURE_TENANT_ID -auto-approve'
+                    sh 'cd ${params.Environment} && terraform ${params.Action}'
+                    /* -var=subscription_id=$AZURE_SUBSCRIPTION_ID -var=client_id=$AZURE_CLIENT_ID -var=client_secret=$AZURE_CLIENT_SECRET -var=tenant_id=$AZURE_TENANT_ID -auto-approve'*/
                }
           }
         }
