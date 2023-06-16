@@ -24,6 +24,6 @@ dans lesquelles seront déployé un conteneur issu d'une image docker précédem
 - Terraform apply ou destroy correspondant à la variable du paramètre "choices".
 - Sanity Check : "input "Does the staging environment is ${params.Action}ed?"" permet la validation manuelle pour réaliser la suite du Jenkinsfile qui correspond au déploiement en Prodenvironment.
 
-5 - Afin de permettre la surveillance et la maintenance, se rendre sur le portail azure et sélectionner la VM. Dans l'onglet à gauche Supervision--->Insight--->Performances (il est possible de créer des alertes en fonction des besoins)
+5 - Afin de permettre la surveillance et la maintenance, se rendre sur le portail azure et sélectionner la VM. Dans l'onglet à gauche Supervision--->Insight--->Performances (il est possible de créer des alertes en 	fonction des besoins)
 		
 
