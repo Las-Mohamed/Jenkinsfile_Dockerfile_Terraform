@@ -24,6 +24,6 @@ stages:
       displayName: Build an image
       inputs:
         command: build
-        dockerfile: '$(Build.mowqa/pytoon)/Dockerfile'
+        dockerfile: '$(Build.SourceFiles)/Dockerfile'
         tags: |
-          $(tag)
+          $(mowqa/pytoon)
