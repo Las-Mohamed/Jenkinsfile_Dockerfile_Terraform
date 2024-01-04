@@ -7,7 +7,7 @@ pipeline {
          choice choices: ['apply', 'destroy'], name: 'Action'
     }
     environment {
-        MY_CRED = credentials('f2d10700-72b4-4064-b1d8-1a4882c4f29f')
+        MY_CRED = credentials('xxxxxxx-72b4-4064-b1d8-xxxxxxxxx')
      }
     
     stages {
@@ -29,7 +29,7 @@ pipeline {
         stage ('Push Image') {
             steps {
                 script {
-                    sh "docker login -u mowqa -p dckr_pat_is0y3bHt8AoE6BLlA7sv3NaKJMI"
+                    sh "docker login -u <docker_username> -p <docker_token>
                     sh "docker push mowqa/pytoon"
                 }
             }
