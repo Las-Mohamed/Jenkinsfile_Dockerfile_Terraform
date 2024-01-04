@@ -6,7 +6,7 @@ pipeline {
     }
     
     environment {
-        MY_CRED = credentials('f2d10700-72b4-4064-b1d8-1a4882c4f29f')        /*Appel des credentials Jenkins correspondant au service principal Azure*/
+        MY_CRED = credentials('xxxxxxxxx-72b4-4064-b1d8-xxxxxxxxxxx')        /*Appel des credentials Jenkins correspondant au service principal Azure*/
      }
     
     stages {
@@ -28,7 +28,7 @@ pipeline {
         stage ('Push Image') {
             steps {
                 script {
-                    sh "docker login -u mowqa -p dckr_pat_is0y3bHt8AoE6BLlA7sv3NaKJMI"        /*Login à DockerHub et push de l'image*/
+                    sh "docker login -u <docker_username> -p <docker_token>        /*Login à DockerHub et push de l'image*/
                     sh "docker push mowqa/pytoon"
                 }
             }
